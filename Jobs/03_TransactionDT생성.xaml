@@ -1,0 +1,232 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="_03_TransactionDT생성" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_arrSearchDate" Type="InArgument(s:String[])" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="out_dt_TransactionData" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>_03_TransactionDT생성_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="_03_TransactionDT생성" sap:VirtualizedContainerService.HintSize="1082,2721.714285714286" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518.8571428571429,177.71428571428572" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;***Transaction DT 생성 시작***&quot;]" />
+    <Sequence sap:VirtualizedContainerService.HintSize="518.8571428571429,2352.5714285714284" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: 의약품안전나라" sap:VirtualizedContainerService.HintSize="484.57142857142856,2149.714285714286" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450.2857142857143,1897.7142857142858" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '고시/공고/알림'" sap:VirtualizedContainerService.HintSize="416,191.42857142857142" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="nedrug.mfds.go.kr/index" DesignTimeRectangle="1331, 604, 188, 150" DesignTimeScaleFactor="1.75" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='고시/공고/알림' parentid='gnb' tag='A' /&gt;" Guid="2a6ab739-1b61-49f6-887f-02772fd4fcae" ImageBase64="" InformativeScreenshot="45405d4820e64e95a579842e06b5af89.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='의약품안전나라' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '행정처분정보'" sap:VirtualizedContainerService.HintSize="416,191.42857142857142" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="nedrug.mfds.go.kr/index" DesignTimeRectangle="439, 954, 144, 38" DesignTimeScaleFactor="1.75" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='행정처분정보' parentid='gnb' tag='SPAN' /&gt;" Guid="230f03e4-e523-4353-9956-c191fc5e3855" ImageBase64="" InformativeScreenshot="0f47fb222b4b2c5141887edbce3e8335.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='의약품안전나라' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="416,125.14285714285714" sap2010:WorkflowViewState.IdRef="Delay_1" />
+              <uix:NSelectItem DisplayName="Select Item '품목구분'" sap:VirtualizedContainerService.HintSize="416,191.42857142857142" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="의약품등" ScopeIdentifier="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Version="V4">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="3">
+                    <x:String>-전체-</x:String>
+                    <x:String>의약품등</x:String>
+                    <x:String>화장품</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable BrowserURL="nedrug.mfds.go.kr/pbp/CCBAO01" DesignTimeRectangle="1093, 1157, 490, 70" DesignTimeScaleFactor="1.75" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='searchTypeCode' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='searchTypeCode' tag='SELECT' type='' class='' aaname='품목구분' /&gt;" Guid="c04702a6-eb11-4f94-bee3-ccdb406cdf70" InformativeScreenshot="880084e3d18886daefb4304ff8454df7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='의약품안전나라 &amp;gt; 고시/공고/알림 &amp;gt; 안전성정보 &amp;gt; 행정처분정보 - 목록' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="886, 1176, 184, 33" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='searchFiled' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='searchFiled' tag='LABEL' type='' class='' aaname='품목구분' check:innerText='품목구분' /&gt;" Guid="264066e9-c7ed-4411-9ad2-bf24485384a2" SearchSteps="Selector, FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NSelectItem.Target>
+              </uix:NSelectItem>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '처분일자 시작일'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,254.85714285714286" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Text="[in_arrSearchDate(0)]" Version="V4">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="nedrug.mfds.go.kr/pbp/CCBAO01" DesignTimeRectangle="1803, 1236, 227, 70" DesignTimeScaleFactor="1.75" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='date_trMinDate' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='date_trMinDate' tag='INPUT' type='text' class='date_min hasDatepicker' aaname='처분일자 시작일' /&gt;" Guid="0c4f8748-f147-449c-a2fc-50bf805f4849" InformativeScreenshot="e5012ed81ffac61ed24986ed2170406e.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='의약품안전나라 &amp;gt; 고시/공고/알림 &amp;gt; 안전성정보 &amp;gt; 행정처분정보 - 목록' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="1596, 1255, 184, 33" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='처분일자 시작일' parentid='searchFiled' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='처분일자 시작일' parentid='searchFiled' tag='LABEL' type='' class='' check:innerText='처분일자 시작일' /&gt;" Guid="34017790-bbcc-478e-83bd-7ce14403a9db" SearchSteps="Selector, FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Label'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,254.85714285714286" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Text="[in_arrSearchDate(1)]" Version="V4">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="nedrug.mfds.go.kr/pbp/CCBAO01" DesignTimeRectangle="2067, 1236, 227, 70" DesignTimeScaleFactor="1.75" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='date_trMaxDate' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='date_trMaxDate' tag='INPUT' type='text' class='date_max hasDatepicker' aaname='처분일자 종료일' /&gt;" Guid="2e6ff22b-5f43-4bc5-9395-70966329eb46" InformativeScreenshot="f72c7bc7550595d00e1fd813c3e15a8f.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='의약품안전나라 &amp;gt; 고시/공고/알림 &amp;gt; 안전성정보 &amp;gt; 행정처분정보 - 목록' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="2040, 1255, 13, 33" ElementType="Text" FullSelectorArgument="&lt;webctrl class='inp_text' parentid='searchFiled' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='inp_text' parentid='searchFiled' tag='SPAN' type='' aaname='  ~ ' check:innerText='~' /&gt;" Guid="378edbae-402c-4338-9752-149194767e44" SearchSteps="Selector, FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '검색'" sap:VirtualizedContainerService.HintSize="416,191.42857142857142" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="nedrug.mfds.go.kr/pbp/CCBAO01" DesignTimeRectangle="2309, 1157, 70, 70" DesignTimeScaleFactor="1.75" ElementType="Button" FullSelectorArgument="&lt;webctrl id='btnSearch' tag='BUTTON' /&gt;" Guid="02ba3a2f-3c83-445f-9e34-88d99418fadc" ImageBase64="" InformativeScreenshot="e9768fce4092c4a3df11cd92ebf02066.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='의약품안전나라 &amp;gt; 고시/공고/알림 &amp;gt; 안전성정보 &amp;gt; 행정처분정보 - 목록' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="416,125.14285714285714" sap2010:WorkflowViewState.IdRef="Delay_2" />
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '엑셀다운로드'" sap:VirtualizedContainerService.HintSize="416,191.42857142857142" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="nedrug.mfds.go.kr/pbp/CCBAO01/getList" DesignTimeRectangle="2085, 1394, 164, 35" DesignTimeScaleFactor="1.75" ElementType="Text" FullSelectorArgument="&lt;webctrl class='icon_xls' parentid='list' tag='SPAN' aaname='엑셀다운로드' /&gt;" Guid="2fa0b089-4862-48dc-90f9-875d250b9856" ImageBase64="" InformativeScreenshot="33371c398f452ae696be26d30f58605c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='의약품안전나라 &amp;gt; 고시/공고/알림 &amp;gt; 안전성정보 &amp;gt; 행정처분정보 - 목록' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="2066, 1385, 201, 52" ElementType="Button" FullSelectorArgument="&lt;webctrl parentid='list' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='list' tag='BUTTON' type='button' class='btn_small btn_icon' aaname='엑셀다운로드' check:innerText='엑셀다운로드' /&gt;" Guid="79c79751-8472-4c67-9de3-839d703330d3" SearchSteps="Selector, FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="416,118.28571428571429" sap2010:WorkflowViewState.IdRef="Delay_3" />
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-12, -12, 2904, 1740" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAGdYAABnWARjRyu0AAAKKSURBVDhPpZFfSFNRHMd/ZRQWPeSDu/eo05mzZWg55u79nTNdVnOmRAWtsqVOO3cr6jEIop6KICgIozB66K9E9TTUh6CHXtJ8KijEp4yQJNp1ynDqtE6cC4vhopcePg+H8/1+Duf3A0AOORQA8nag0YdAo5M2byTp8nROVnu6hgr1UxcAuavI25Obh9xDBaAxCDQq9u88JgaqgmKsvFlMlPrFeJlfvHLsE5e2H/xa7I1EgEbzBHZA/r4ADXHNdUDMqXRqRcFnaZVeSan0Rkqlg0sKJjOKLt6W7xEed/gisBgANSzBekA+DCwqztccEr8U/V6SMFeCMFhUEX4qukVaxboEYS8WVRSf7P7lcG2o9UhdyBKEgBqiytMlJsr8d+dVCknCYEXRYcgRgP7qdos3FXtB2LR1ScIeLCgoRsubR29Wt2+Wgpfy9cCu4wspldanVAomYfB8axA2oAHgO21RpPVCuDYEUyWNG2cJ/TBd4hOfS5vcUjAlB6e5T3yLVwac/c42cHq6wBqU/CNyBZCfBGp0QuOZ0nM7DoNQtI4ZwuSsjsrAIiAXhXrvvL2h27NJ680WJdsA+Ud5b0GNcaL11IzZm4vSKl02CbPWkcwJvAZqNADyQkDuBeQjf+6y+GL345UtGzIKTpuEnZWCd6tCs3KlgHwuryxh0ZFhR8CxpGDCJCwoBZfzQv/CFxuIV7a4Mwp+MQmzSYELkH/PC/4NFhO76zuCJmF9syq9bhK2JjusMCDP5BVyoYYAGr39uKpVW1YwniBsi1x3ViDpBuQ/8orIxVrk6RKtp++Os00XNv1WgjCnLK8WZNd2FZA/AuRPAfkToEZfsTfSNEOYXF3IJKw4W7YEQoj/4jdOrHehwNvrKgAAAABJRU5ErkJggg==" InformativeScreenshot="08b18e5852fa23aebd9bf0db90327c23.jpg" Selector="&lt;html app='chrome.exe' title='의약품안전나라' /&gt;" Title="의약품안전나라" Url="https://nedrug.mfds.go.kr/index" Version="V1" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[out_dt_TransactionData]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="484.57142857142856,110.85714285714286" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet0" WorkbookPath="[Path.Combine(in_Config(&quot;DownloadFolder&quot;).ToString, &quot;행정처분.xlsx&quot;)]" />
+    </Sequence>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518.8571428571429,168.57142857142858" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;***Transaction DT 생성 종료***&quot;]" />
+  </Sequence>
+</Activity>
