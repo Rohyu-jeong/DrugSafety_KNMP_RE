@@ -50,6 +50,8 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.Excel</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -118,43 +120,53 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_03_TransactionDT생성" sap:VirtualizedContainerService.HintSize="1082,2721.714285714286" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_03_TransactionDT생성" sap:VirtualizedContainerService.HintSize="896.2857142857142,3015.4285714285716" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518.8571428571429,177.71428571428572" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;***Transaction DT 생성 시작***&quot;]" />
-    <Sequence sap:VirtualizedContainerService.HintSize="518.8571428571429,2352.5714285714284" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518.8571428571429,175.42857142857142" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;***Transaction DT 생성 시작***&quot;]" />
+    <Sequence DisplayName="Transaction DT 생성 | Sequence" sap:VirtualizedContainerService.HintSize="518.8571428571429,2650.8571428571427" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: 의약품안전나라" sap:VirtualizedContainerService.HintSize="484.57142857142856,2149.714285714286" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Version="V2">
+      <uix:NApplicationCard sap2010:Annotation.AnnotationText="의약품안전나라 홈페이지 접속" AttachMode="ByInstance" DisplayName="Use Browser Chrome: 의약품안전나라" sap:VirtualizedContainerService.HintSize="484.57142857142856,2404" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450.2857142857143,1897.7142857142858" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450.2857142857143,2122.285714285714" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '고시/공고/알림'" sap:VirtualizedContainerService.HintSize="416,191.42857142857142" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Version="V4">
+              <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="'고시/공고/알림' 탭 클릭" ClickType="Single" DisplayName="Click '고시/공고/알림'" sap:VirtualizedContainerService.HintSize="416,221.14285714285714" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Version="V4">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="nedrug.mfds.go.kr/index" DesignTimeRectangle="1331, 604, 188, 150" DesignTimeScaleFactor="1.75" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='고시/공고/알림' parentid='gnb' tag='A' /&gt;" Guid="2a6ab739-1b61-49f6-887f-02772fd4fcae" ImageBase64="" InformativeScreenshot="45405d4820e64e95a579842e06b5af89.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='의약품안전나라' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                 </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </uix:NClick>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '행정처분정보'" sap:VirtualizedContainerService.HintSize="416,191.42857142857142" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Version="V4">
+              <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="'행정처분정보' 메뉴 클릭" ClickType="Single" DisplayName="Click '행정처분정보'" sap:VirtualizedContainerService.HintSize="416,221.14285714285714" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Version="V4">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="nedrug.mfds.go.kr/index" DesignTimeRectangle="439, 954, 144, 38" DesignTimeScaleFactor="1.75" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='행정처분정보' parentid='gnb' tag='SPAN' /&gt;" Guid="230f03e4-e523-4353-9956-c191fc5e3855" ImageBase64="" InformativeScreenshot="0f47fb222b4b2c5141887edbce3e8335.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='의약품안전나라' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                 </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </uix:NClick>
-              <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="416,125.14285714285714" sap2010:WorkflowViewState.IdRef="Delay_1" />
-              <uix:NSelectItem DisplayName="Select Item '품목구분'" sap:VirtualizedContainerService.HintSize="416,191.42857142857142" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="의약품등" ScopeIdentifier="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Version="V4">
+              <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="416,123.42857142857143" sap2010:WorkflowViewState.IdRef="Delay_1" />
+              <uix:NSelectItem sap2010:Annotation.AnnotationText="'의약품등' 항목 선택" DisplayName="Select Item '품목구분'" sap:VirtualizedContainerService.HintSize="416,221.14285714285714" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="의약품등" ScopeIdentifier="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Version="V4">
                 <uix:NSelectItem.Items>
                   <scg:List x:TypeArguments="x:String" Capacity="3">
                     <x:String>-전체-</x:String>
@@ -165,53 +177,78 @@
                 <uix:NSelectItem.Target>
                   <uix:TargetAnchorable BrowserURL="nedrug.mfds.go.kr/pbp/CCBAO01" DesignTimeRectangle="1093, 1157, 490, 70" DesignTimeScaleFactor="1.75" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='searchTypeCode' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='searchTypeCode' tag='SELECT' type='' class='' aaname='품목구분' /&gt;" Guid="c04702a6-eb11-4f94-bee3-ccdb406cdf70" InformativeScreenshot="880084e3d18886daefb4304ff8454df7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='의약품안전나라 &amp;gt; 고시/공고/알림 &amp;gt; 안전성정보 &amp;gt; 행정처분정보 - 목록' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target DesignTimeRectangle="886, 1176, 184, 33" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='searchFiled' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='searchFiled' tag='LABEL' type='' class='' aaname='품목구분' check:innerText='품목구분' /&gt;" Guid="264066e9-c7ed-4411-9ad2-bf24485384a2" SearchSteps="Selector, FuzzySelector" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
                   </uix:TargetAnchorable>
                 </uix:NSelectItem.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </uix:NSelectItem>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '처분일자 시작일'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,254.85714285714286" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Text="[in_arrSearchDate(0)]" Version="V4">
+              <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="메일 본문에서 추출한 검색 기간을 기준으로 시작일 입력" ClickBeforeMode="Single" DisplayName="Type Into '처분일자 시작일'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,295.42857142857144" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Text="[in_arrSearchDate(0)]" Version="V4">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="nedrug.mfds.go.kr/pbp/CCBAO01" DesignTimeRectangle="1803, 1236, 227, 70" DesignTimeScaleFactor="1.75" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='date_trMinDate' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='date_trMinDate' tag='INPUT' type='text' class='date_min hasDatepicker' aaname='처분일자 시작일' /&gt;" Guid="0c4f8748-f147-449c-a2fc-50bf805f4849" InformativeScreenshot="e5012ed81ffac61ed24986ed2170406e.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='의약품안전나라 &amp;gt; 고시/공고/알림 &amp;gt; 안전성정보 &amp;gt; 행정처분정보 - 목록' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target DesignTimeRectangle="1596, 1255, 184, 33" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='처분일자 시작일' parentid='searchFiled' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='처분일자 시작일' parentid='searchFiled' tag='LABEL' type='' class='' check:innerText='처분일자 시작일' /&gt;" Guid="34017790-bbcc-478e-83bd-7ce14403a9db" SearchSteps="Selector, FuzzySelector" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
                   </uix:TargetAnchorable>
                 </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Label'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,254.85714285714286" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Text="[in_arrSearchDate(1)]" Version="V4">
+              <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="메일 본문에서 추출한 검색 기간을 기준으로 종료일 입력" ClickBeforeMode="Single" DisplayName="Type Into 'Label'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,295.42857142857144" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Text="[in_arrSearchDate(1)]" Version="V4">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="nedrug.mfds.go.kr/pbp/CCBAO01" DesignTimeRectangle="2067, 1236, 227, 70" DesignTimeScaleFactor="1.75" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='date_trMaxDate' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='date_trMaxDate' tag='INPUT' type='text' class='date_max hasDatepicker' aaname='처분일자 종료일' /&gt;" Guid="2e6ff22b-5f43-4bc5-9395-70966329eb46" InformativeScreenshot="f72c7bc7550595d00e1fd813c3e15a8f.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='의약품안전나라 &amp;gt; 고시/공고/알림 &amp;gt; 안전성정보 &amp;gt; 행정처분정보 - 목록' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target DesignTimeRectangle="2040, 1255, 13, 33" ElementType="Text" FullSelectorArgument="&lt;webctrl class='inp_text' parentid='searchFiled' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='inp_text' parentid='searchFiled' tag='SPAN' type='' aaname='  ~ ' check:innerText='~' /&gt;" Guid="378edbae-402c-4338-9752-149194767e44" SearchSteps="Selector, FuzzySelector" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
                   </uix:TargetAnchorable>
                 </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '검색'" sap:VirtualizedContainerService.HintSize="416,191.42857142857142" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Version="V4">
+              <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="검색 아이콘 클릭하여 결과 조회" ClickType="Single" DisplayName="Click '검색'" sap:VirtualizedContainerService.HintSize="416,221.14285714285714" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Version="V4">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="nedrug.mfds.go.kr/pbp/CCBAO01" DesignTimeRectangle="2309, 1157, 70, 70" DesignTimeScaleFactor="1.75" ElementType="Button" FullSelectorArgument="&lt;webctrl id='btnSearch' tag='BUTTON' /&gt;" Guid="02ba3a2f-3c83-445f-9e34-88d99418fadc" ImageBase64="" InformativeScreenshot="e9768fce4092c4a3df11cd92ebf02066.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='의약품안전나라 &amp;gt; 고시/공고/알림 &amp;gt; 안전성정보 &amp;gt; 행정처분정보 - 목록' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                 </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </uix:NClick>
-              <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="416,125.14285714285714" sap2010:WorkflowViewState.IdRef="Delay_2" />
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '엑셀다운로드'" sap:VirtualizedContainerService.HintSize="416,191.42857142857142" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Version="V4">
+              <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="416,123.42857142857143" sap2010:WorkflowViewState.IdRef="Delay_2" />
+              <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="조회된 검색 결과를 엑셀 파일로 다운로드" ClickType="Single" DisplayName="Click '엑셀다운로드'" sap:VirtualizedContainerService.HintSize="416,221.14285714285714" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="efe56b88-320c-4f2a-b7cc-b0a1e229836c" Version="V4">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="nedrug.mfds.go.kr/pbp/CCBAO01/getList" DesignTimeRectangle="2085, 1394, 164, 35" DesignTimeScaleFactor="1.75" ElementType="Text" FullSelectorArgument="&lt;webctrl class='icon_xls' parentid='list' tag='SPAN' aaname='엑셀다운로드' /&gt;" Guid="2fa0b089-4862-48dc-90f9-875d250b9856" ImageBase64="" InformativeScreenshot="33371c398f452ae696be26d30f58605c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='의약품안전나라 &amp;gt; 고시/공고/알림 &amp;gt; 안전성정보 &amp;gt; 행정처분정보 - 목록' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target DesignTimeRectangle="2066, 1385, 201, 52" ElementType="Button" FullSelectorArgument="&lt;webctrl parentid='list' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='list' tag='BUTTON' type='button' class='btn_small btn_icon' aaname='엑셀다운로드' check:innerText='엑셀다운로드' /&gt;" Guid="79c79751-8472-4c67-9de3-839d703330d3" SearchSteps="Selector, FuzzySelector" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
                   </uix:TargetAnchorable>
                 </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </uix:NClick>
-              <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="416,118.28571428571429" sap2010:WorkflowViewState.IdRef="Delay_3" />
+              <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="416,116.57142857142857" sap2010:WorkflowViewState.IdRef="Delay_3" />
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>
@@ -222,11 +259,18 @@
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </uix:NApplicationCard>
-      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[out_dt_TransactionData]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="484.57142857142856,110.85714285714286" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet0" WorkbookPath="[Path.Combine(in_Config(&quot;DownloadFolder&quot;).ToString, &quot;행정처분.xlsx&quot;)]" />
+      <ui:ReadRange Range="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="다운로드 받은 엑셀 파일에서 전체 데이터를 읽어 out_dt_TransactionData로 저장" DataTable="[out_dt_TransactionData]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="484.57142857142856,154.85714285714286" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet0" WorkbookPath="[Path.Combine(in_Config(&quot;DownloadFolder&quot;).ToString, &quot;행정처분.xlsx&quot;)]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:ReadRange>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518.8571428571429,168.57142857142858" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;***Transaction DT 생성 종료***&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518.8571428571429,166.28571428571428" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;***Transaction DT 생성 종료***&quot;]" />
   </Sequence>
 </Activity>
