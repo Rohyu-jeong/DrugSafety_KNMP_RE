@@ -97,20 +97,20 @@
       <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_02_결과파일저장" sap:VirtualizedContainerService.HintSize="894.5714285714286,1744.5714285714287" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_02_결과파일저장" sap:VirtualizedContainerService.HintSize="1266,1728" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="640,175.42857142857142" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;***결과 파일 생성 시작***&quot;]" />
-    <Sequence sap:VirtualizedContainerService.HintSize="640,1380" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="638,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;***결과 파일 생성 시작***&quot;]" />
+    <Sequence DisplayName="결과 파일 생성 및 시트명 변경 | Sequence" sap:VirtualizedContainerService.HintSize="638,1368" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence sap2010:Annotation.AnnotationText="Input 폴더의 원본 템플릿을 복사하여 Output 폴더에 결과 파일 생성" DisplayName="결과 파일 생성 | Sequence" sap:VirtualizedContainerService.HintSize="605.7142857142857,482.2857142857143" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence sap2010:Annotation.AnnotationText="Input 폴더의 원본 템플릿을 복사하여 Output 폴더에 결과 파일 생성" DisplayName="결과 파일 생성 | Sequence" sap:VirtualizedContainerService.HintSize="604,479" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="strInputPath" />
         </Sequence.Variables>
@@ -120,7 +120,7 @@
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="480,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
           <ui:MultipleAssign.AssignOperations>
             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -142,40 +142,40 @@
             </scg:List>
           </ui:MultipleAssign.AssignOperations>
         </ui:MultipleAssign>
-        <ui:CopyFile ContinueOnError="{x:Null}" Destination="[io_Config(&quot;OutputPath&quot;).ToString]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="480,179.42857142857142" sap2010:WorkflowViewState.IdRef="CopyFile_1" Path="[strInputPath]" />
+        <ui:CopyFile ContinueOnError="{x:Null}" Destination="[io_Config(&quot;OutputPath&quot;).ToString]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="479,177" sap2010:WorkflowViewState.IdRef="CopyFile_1" Path="[strInputPath]" />
       </Sequence>
-      <Sequence sap2010:Annotation.AnnotationText="yy년MM월 -&gt; 25년05월로 변경" DisplayName="시트명 변경 | Sequence" sap:VirtualizedContainerService.HintSize="605.7142857142857,805.7142857142857" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <Sequence sap2010:Annotation.AnnotationText="yy년MM월 -&gt; 25년05월로 변경" DisplayName="시트명 변경 | Sequence" sap:VirtualizedContainerService.HintSize="604,797" sap2010:WorkflowViewState.IdRef="Sequence_4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="571.4285714285714,692" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+        <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="570,683" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
           <ueab:ExcelProcessScopeX.Body>
             <ActivityAction x:TypeArguments="ui:IExcelProcess">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="537.1428571428571,581.7142857142857" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="536,573" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="502.85714285714283,521.7142857142857" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[io_Config(&quot;OutputPath&quot;).ToString]">
+                <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="502,513" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[io_Config(&quot;OutputPath&quot;).ToString]">
                   <ueab:ExcelApplicationCard.Body>
                     <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468.57142857142856,223.42857142857142" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,221" sap2010:WorkflowViewState.IdRef="Sequence_6">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ueab:RenameSheetX DisplayName="Rename Sheet" From="[Excel.Sheet(&quot;yy년MM월&quot;)]" sap:VirtualizedContainerService.HintSize="434.2857142857143,163.42857142857142" sap2010:WorkflowViewState.IdRef="RenameSheetX_1" To="[io_Config(&quot;WorkMonth&quot;).ToString]" />
+                        <ueab:RenameSheetX DisplayName="Rename Sheet" From="[Excel.Sheet(&quot;yy년MM월&quot;)]" sap:VirtualizedContainerService.HintSize="434,161" sap2010:WorkflowViewState.IdRef="RenameSheetX_1" To="[io_Config(&quot;WorkMonth&quot;).ToString]" />
                       </Sequence>
                     </ActivityAction>
                   </ueab:ExcelApplicationCard.Body>
@@ -186,6 +186,6 @@
         </ueab:ExcelProcessScopeX>
       </Sequence>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="640,166.28571428571428" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;***결과 파일 생성 종료***&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="638,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;***결과 파일 생성 종료***&quot;]" />
   </Sequence>
 </Activity>
