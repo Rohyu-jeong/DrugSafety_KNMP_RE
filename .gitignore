@@ -1,5 +1,7 @@
 # UiPath 자동 생성 폴더
 .local/
+.storage/
+.screenshots/
 
 # 프로젝트 설정/캐시 파일 무시
 *.nupkg
