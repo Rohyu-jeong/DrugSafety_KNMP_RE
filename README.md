@@ -1,39 +1,44 @@
-### Documentation is included in the Documentation folder ###
+# 의약품 안전나라 자동화 프로그램
 
+> **의약품 안전나라 행정 처분 데이터를 수집하여 조건별로 분류·가공하고, 결과를 Excel로 저장한 후 메일로 전송하는 자동화 프로그램입니다.**
 
-### REFrameWork Template ###
-**Robotic Enterprise Framework**
+<br>
 
-* Built on top of *Transactional Business Process* template
-* Uses *State Machine* layout for the phases of automation project
-* Offers high level logging, exception handling and recovery
-* Keeps external settings in *Config.xlsx* file and Orchestrator assets
-* Pulls credentials from Orchestrator assets and *Windows Credential Manager*
-* Gets transaction data from Orchestrator queue and updates back status
-* Takes screenshots in case of system exceptions
+## 기술 환경
 
+- UiPath Studio
+- Robotic Enterprise Framework (REFramework)
+- Excel, Web Automation
+- HTML Email, DataTable, Dictionary 등 활용
 
-### How It Works ###
+<br>
 
-1. **INITIALIZE PROCESS**
- + ./Framework/*InitiAllSettings* - Load configuration data from Config.xlsx file and from assets
- + ./Framework/*GetAppCredential* - Retrieve credentials from Orchestrator assets or local Windows Credential Manager
- + ./Framework/*InitiAllApplications* - Open and login to applications used throughout the process
+## 자동화 흐름 요약
 
-2. **GET TRANSACTION DATA**
- + ./Framework/*GetTransactionData* - Fetches transactions from an Orchestrator queue defined by Config("OrchestratorQueueName") or any other configured data source
+1. 메일 수신 후 검색어, 검색 기간, 시트 명 기준이 되는 날짜 정보 추출
+2. 의약품 안전나라 사이트 접속 후 행정 처분 정보 카테고리 진입
+3. ‘의약품’ 항목의 현재 처분 정보 내 행정 처분 데이터를 검색
+4. 검색 결과 전체 데이터를 추출하여 Excel 시트에 저장
+5. 처분 내용 텍스트 내에서 필터 키워드 포함 여부로 필터링하여 별도 시트 저장
+6. 필터링된 데이터를 처리일자(월일/응답) 항목 기준으로 분리 저장
+7. (선택) 필터링된 시트를 기준으로 오류사유 정렬하여 메일 본문용 테이블 작성
+8. 메일 본문 작성 후 첨부 파일과 함께 자동 발송
 
-3. **PROCESS TRANSACTION**
- + *Process* - Process trasaction and invoke other workflows related to the process being automated 
- + ./Framework/*SetTransactionStatus* - Updates the status of the processed transaction (Orchestrator transactions by default): Success, Business Rule Exception or System Exception
+<br>
 
-4. **END PROCESS**
- + ./Framework/*CloseAllApplications* - Logs out and closes applications used throughout the process
+## Workflow 구성
 
+- **Initialization** <br>
+  00\_폴더 초기화.xaml <br>
+  01\_메일 수신.xaml <br>
+  02\_결과 파일 저장.xaml <br>
+  03_TransactionDT 생성.xaml <br>
+  04\_초기 DT 생성.xaml <br>
 
-### For New Project ###
+- **Process Transaction** <br>
+  05\_상세 정보 DT 추출.xaml <br>
+  06_DT 가공.xaml <br>
 
-1. Check the Config.xlsx file and add/customize any required fields and values
-2. Implement InitiAllApplications.xaml and CloseAllApplicatoins.xaml workflows, linking them in the Config.xlsx fields
-3. Implement GetTransactionData.xaml and SetTransactionStatus.xaml according to the transaction type being used (Orchestrator queues by default)
-4. Implement Process.xaml workflow and invoke other workflows related to the process being automated
+- **End Process** <br>
+  07_DT 저장.xaml <br>
+  08\_메일 발송.xaml <br>
